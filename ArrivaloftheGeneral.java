@@ -13,56 +13,23 @@ public class ArrivaloftheGeneral {
         if(arr.length==1){
             System.out.println(0);
         }
-        else if(arr.length==2){
-            if(arr[0]>arr[1]){
-                System.out.println(0);
-            }
-            else{
-                System.out.println(1);
-            }
-        }
         else{
             int maxi=0,mini=0;
             for(int i=0;i<arr.length;i++){
                 if(arr[i]>arr[maxi]){
                     maxi=i;
                 }
-            }
-            for(int i=0;i<arr.length;i++){
-                if(arr[i]<arr[mini]){
+                if(arr[i]<=arr[mini]){
                     mini=i;
                 }
             }
-            int mswap=0,minswap=0;
-            for(int i=maxi;i>0;i--){
-                
-                int temp=arr[i];
-                arr[i]=arr[i-1];
-                arr[i-1]=temp;
-                mswap++;
-            }
-            int newmini=0;
-            for(int i=0;i<arr.length;i++){
-                if(arr[i]<arr[newmini]){
-                    newmini=i;
-                }
-            }
-            for(int i=newmini;i<n-1;i++){
-                
-                int temp=arr[i];
-                arr[i]=arr[i+1];
-                arr[i+1]=temp;
-                minswap++;
-            }
             if(maxi<mini){
-                System.out.println(minswap+mswap);
+                System.out.println(maxi+(arr.length-1)-mini);
             }
             else if(maxi>mini){
-                System.out.println(minswap+mswap-1);
+                System.out.println(maxi+(arr.length-1)-mini-1);
             }
         }
-
-        
-
+        sc.close();
     }
 }
