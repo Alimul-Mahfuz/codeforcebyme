@@ -1,7 +1,4 @@
 import java.util.Scanner;
-
-import javax.naming.ldap.ManageReferralControl;
-
 public class UltraFastMathematician {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

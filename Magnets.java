@@ -14,6 +14,7 @@ public class Magnets {
 
         }
         int i=0;
+        sc.close();
         for(i=0;i<list.size()-1;i++){
             if(list.get(i).equals(list.get(i+1))){
                 continue;
@@ -24,7 +25,7 @@ public class Magnets {
             }
         }
         System.out.println(grp);
-        sc.close();
-
+    
+    
     }
 }

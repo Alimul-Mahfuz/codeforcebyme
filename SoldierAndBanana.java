@@ -17,5 +17,6 @@ public class SoldierAndBanana {
         else{
             System.out.println(0);
         }
+        sc.close();
     }
 }
