@@ -6,8 +6,8 @@ public class MediumNumber {
         Scanner sc=new Scanner(System.in);
         int t=sc.nextInt();
         ArrayList<Integer> list=new ArrayList<>();
-
-        for(int i=0;i<t;i++){
+        int i=0;
+        while(i<t){
             int j=0;
             int[] arr=new int[3];
             while(j<3){
@@ -16,11 +16,11 @@ public class MediumNumber {
             }
             Arrays.sort(arr);
             list.add(arr[1]);
-
+            i++;
         }
 
-        for(int i : list){
-            System.out.println(i);
+        for(int k : list){
+            System.out.println(k);
         }
 
     }
