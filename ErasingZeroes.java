@@ -45,5 +45,6 @@ public class ErasingZeroes {
                 System.out.println(nz);
             }
         }
+        sc.close();
     }
 }
