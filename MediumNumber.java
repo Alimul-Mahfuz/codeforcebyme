@@ -22,6 +22,7 @@ public class MediumNumber {
         for(int k : list){
             System.out.println(k);
         }
+        sc.close();
 
     }
 }
