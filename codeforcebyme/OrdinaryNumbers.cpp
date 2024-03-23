@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
@@ -9,7 +10,7 @@ int main()
     while (i < t)
     {
         int n;
-        int count = 0;
+        int count = 9;
         cin >> n;
         if (n >= 1 && n <= 9)
         {
@@ -17,28 +18,44 @@ int main()
         }
         else
         {
-            for (int i = 10; i <= n; i++)
+            if (n >= 10 && n < 100)
             {
-                int num = i;
-                bool isSame = true;
-                int prev = num % 10;
-                num/=10;
-                while (num / 10 != 0)
+                for (int i = 1; i <= n / 10; i++)
                 {
-                    if (num % 10 != prev)
-                    {
-                        isSame = false;
-                        break;
-                    }
-                    prev = num % 10;
-                    num = num / 10;
+                    if (n >= 11 * i)
+                        count++;
                 }
-                if (isSame)
-                {
-                    count++;
-                }
+                cout << count << endl;
             }
-            cout << count << endl;
+            else if (n == 100)
+            {
+                cout << 18 << endl;
+            }
+            else if (n > 100)
+            {
+                count=0;
+                int org = n;
+                string oneplace = "1";
+                string zeroplace = "1";
+                int ldigit = 0;
+                while (n /= 10)
+                {
+                    ldigit = n % 10;
+                    oneplace += "1";
+                    zeroplace += "0";
+                }
+                if (org >= ldigit * (std::stoi(oneplace)))
+                {
+                    count+=ldigit;
+                }
+                else
+                    count+=ldigit-1;
+                while(org/=10){
+                    count+=9;
+                }
+
+                cout << count << endl;
+            }
         }
 
         i++;
